@@ -70,7 +70,7 @@ exports.updateReview = async (req, res) => {
             res.status(404).json({ message: 'Know Review Found' });
         }
 
-        await review.findByIdAndUpdate(review._id, req.body, { new: true });
+        await reviewModel.findByIdAndUpdate(review._id, req.body, { new: true });
         res.status(200).json({
             status: "Success",
             message: "Review updated successfully"
@@ -88,7 +88,7 @@ exports.deleteReview = async (req, res) => {
             res.status(404).json({ message: 'Know Review Found' });
         }
 
-        await review.findByIdAndDeletee(review._id, req.body, { new: true });
+        await reviewModel.findByIdAndDeletee(review._id, req.body, { new: true });
         res.status(200).json({
             status: "Success",
             message: "Review Deleted successfully"
