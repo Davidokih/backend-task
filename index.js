@@ -2,7 +2,8 @@ const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { MONGO_URI } = require("./config");
-const cors = require("cors");
+
+const reviewRouter = require('./router/reviewRouter');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,6 +17,7 @@ app.get('/', (req, res) => {
     });
 });
 
+app.use('/api/review', reviewRouter);
 mongoose
     .connect(MONGO_URI)
     .then(() => {
