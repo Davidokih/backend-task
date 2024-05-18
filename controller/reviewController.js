@@ -47,7 +47,7 @@ exports.getAllReviews = async (req, res) => {
 
 exports.getReviewDetail = async (req, res) => {
     try {
-        const review = await reviewModel.findById(re.params.id);
+        const review = await reviewModel.findById(req.params.id);
 
         if (!review) {
             res.status(404).json({ message: 'Know Review Found' });
@@ -64,7 +64,7 @@ exports.getReviewDetail = async (req, res) => {
 
 exports.updateReview = async (req, res) => {
     try {
-        const review = await reviewModel.findById(re.params.id);
+        const review = await reviewModel.findById(req.params.id);
 
         if (!review) {
             res.status(404).json({ message: 'Know Review Found' });
@@ -82,7 +82,7 @@ exports.updateReview = async (req, res) => {
 
 exports.deleteReview = async (req, res) => {
     try {
-        const review = await reviewModel.findById(re.params.id);
+        const review = await reviewModel.findById(req.params.id);
 
         if (!review) {
             res.status(404).json({ message: 'Know Review Found' });
