@@ -88,7 +88,7 @@ exports.deleteReview = async (req, res) => {
             res.status(404).json({ message: 'Know Review Found' });
         }
 
-        await reviewModel.findByIdAndDeletee(review._id, req.body, { new: true });
+        await reviewModel.findByIdAndDelete(review._id);
         res.status(200).json({
             status: "Success",
             message: "Review Deleted successfully"
